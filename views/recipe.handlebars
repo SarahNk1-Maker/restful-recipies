@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe</title> 
+</head>
+<body>
+    <!-- Define the template in a script tag with an id -->
+    <script id="recipe-template" type="text/x-handlebars-template">
+        <h1>{{ title }}</h1>
+        <p>Prep Time: {{ prepTime }}</p>
+        <p>Cook Time: {{ cookTime }}</p>
+        <h2>Ingredients:</h2>
+        <ul>
+            {{#each ingredients}}
+                <li>{{ this }}</li>
+            {{/each}}
+        </ul>
+        <h2>Instructions:</h2>
+        <ol>
+            {{#each instructions}}
+                <li>{{ this }}</li>
+            {{/each}}
+        </ol>
+    </script>
+
+    <!-- Create a container where the recipe will be rendered -->
+    <div id="recipe-container"></div>
+
+    <!-- Include the external JavaScript file -->
+    <script src="recipe.js"></script>
+</body>
+</html>
+
