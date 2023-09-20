@@ -1,2 +1,45 @@
 
 {{!-- A menu/form to sign up or log in. Input options based on the User model. --}}
+<html><div class="row">
+  <div class="col-md-6">
+    <h2>Experienced Chef</h2>
+
+    <form class="form login-form">
+      <div class="form-group">
+        <label for="email-login">email:</label>
+        <input class="form-input" type="text" placeholder="Login here" id="email-login" />
+      </div>
+      <div class="form-group">
+        <label for="password-login">password:</label>
+        <input class="form-input" type="password" id="password-login" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">login</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
+    
+    <h2>New Chef</h2>
+    <form class="form signup-form">
+      <div class="form-group">
+        <label for="email-signup">email:</label>
+        <input class="form-input" type="text" placeholder="Sign up here" id="email-signup" />
+      </div>
+      <div class="form-group">
+        <label for="name-signup">name:</label>
+        <input class="form-input" type="text" id="name-signup" />
+      </div>
+      <div class="form-group">
+        <label for="password-signup">password:</label>
+        <input class="form-input" type="password" id="password-signup" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">sign up</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/public/js/login.js"></script>
+</html>
