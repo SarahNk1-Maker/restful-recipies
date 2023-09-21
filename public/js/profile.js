@@ -1,15 +1,21 @@
 //Script logic to add and remove recipies.
+
+//Event listener to create a new recipe.
 const newFormHandler = async (event) => {
     event.preventDefault();
   
-    const name = document.querySelector('#recipe-name').value.trim();
-    const needed_funding = document.querySelector('#recipe-funding').value.trim();
+    const title = document.querySelector('#recipe-title').value.trim();
     const description = document.querySelector('#recipe-desc').value.trim();
-  
-    if (name && needed_funding && description) {
+    const ingredients = document.querySelector('#recipe-ingredients').value.trim();
+    const instructions = document.querySelector('#recipe-instructions').value.trim();
+    const prep_time = document.querySelector('#recipe-prepTime').value.trim();
+    const cook_time= document.querySelector('#recipe-cookTime').value.trim();
+
+
+    if (title && description && ingredients && instructions && prep_time && cook_time) {
       const response = await fetch(`/api/recipes`, {
         method: 'POST',
-        body: JSON.stringify({ name, needed_funding, description }),
+        body: JSON.stringify({ title, description, ingredients, instructions, prep_time, cook_time }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -23,6 +29,7 @@ const newFormHandler = async (event) => {
     }
   };
   
+  //EVent lsitener to delete a recipe.
   const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
