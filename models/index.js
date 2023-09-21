@@ -10,4 +10,4 @@ Recipe.belongsTo(User, {
     forigenKey: 'user-id'
 });
 
-module.exports - { User, Recipe }
+module.exports = { User, Recipe }
