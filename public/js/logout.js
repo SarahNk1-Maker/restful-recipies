@@ -1,0 +1,1 @@
+//Script logout logic using post request.
