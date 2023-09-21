@@ -1,3 +1,5 @@
+// Ingredients list, prep time, cook time, instructions
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -15,14 +17,27 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    chef: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
+    }, 
+    ingredients: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }, 
+    instructions: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }, 
+    prep_time: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
+    cook_time: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+
     user_id: {
       type: DataTypes.INTEGER,
       references: {
