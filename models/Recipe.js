@@ -14,11 +14,11 @@ Recipe.init(
       autoIncrement: true,
     },
     title: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(2000),
       allowNull: false,
     }, 
     ingredients: {
@@ -26,7 +26,7 @@ Recipe.init(
       allowNull: false,
     }, 
     instructions: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(2000) ,
       allowNull: false,
     }, 
     prep_time: {

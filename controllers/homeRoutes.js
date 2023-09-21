@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -23,6 +23,7 @@ router.get('/', async (req, res) => {
       logged_in: req.session.logged_in 
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
@@ -47,14 +48,14 @@ router.get('/recipe/:id',withAuth, async (req, res) => {
   }
 });
 
-router.get('/login',withAuth, (req, res) => {
+router.get('/login', withAuth, (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
       res.redirect('/profile');
       return;
-    }
-  
-    res.render('login');
+    } 
+    
+   res.render('login');
   });
   
 // Route handler to get uses profile data and render their profile page. 

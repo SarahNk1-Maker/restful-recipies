@@ -1,6 +1,6 @@
-const router = express.Router();
-const { Recipe } = require('../models'); // Import your Recipe model
-const withAuth = require('../utils/auth');
+const router = require('express').Router();
+const { Recipe } = require('../../models'); // Import your Recipe model
+const withAuth = require('../../utils/auth'); //Import our utility function, why this one need specify file instead of just folder?
 
 // Route to create a new recipe (POST)
 router.post('/recipe',withAuth, async (req, res) => {
