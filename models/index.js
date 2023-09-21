@@ -1,13 +1,13 @@
 const User = require('./User');
 const Recipe = require('./Recipe');
 
-User.hasmany(Recipe, {
-    forigenKey: 'user-id',
+User.hasMany(Recipe, {
+    foreignKey: 'user_id', //fixed user-id to user_id
     onDelete: 'CASCADE'
 })
 
 Recipe.belongsTo(User, {
-    forigenKey: 'user-id'
+    foreignKey: 'user_id' //Fixed foreign key spellings
 });
 
 module.exports = { User, Recipe }
