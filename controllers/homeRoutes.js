@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Recipe, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // Get all recipes and JOIN with user data
     const recipeData = await Recipe.findAll({
