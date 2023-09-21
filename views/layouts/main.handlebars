@@ -19,17 +19,17 @@
       <nav>
      <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/chef">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <a href="/chef">Profile</a> |
+        <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="/login">Login</a>
         {{/if}}
       </nav>
       <div class="hero">
             <p>Discover delicious recipes for every occasion</p>
             <div class="search-container">
-                <input type="text" id="search-input" placeholder="Whats cooking...">
-                <button id="search-button">Start cooking</button>
+                <input type="text" id="search-input" placeholder="What are you craving?">
+                <button id="search-button">Start cooking!</button>
             </div>
         </div>
     </header>
