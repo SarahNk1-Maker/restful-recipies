@@ -1,1 +1,59 @@
 {{!-- The users profile page. Shows their own recipies. --}}
+<div>
+  <div>
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<section id="newRecipeForm">
+    <h3>Create a New Recipie:</h3>
+    <form>
+
+        <div>
+            <label>Recipe name: </label>
+            <input>
+        </div>
+
+        <div>
+            <label>Description: </label>
+            <input>
+        </div>
+
+        <div>
+            <label>Ingredients List:</label>
+            <input>
+        </div>
+
+        <div>
+            <label>Instructions:</label>
+            <input>
+        </div>
+
+        <div>
+            <label>Prep Time:</label>
+            <input>
+        </div>
+
+        <div>
+            <label>Cook Time:</label>
+            <input>
+        </div>
+
+    </form>
+</section>
+
+{{#if recipe.length}}
+<section id="chefRecipeList">
+    <h3>Current Projects:</h3>
+    {{#each recipes as |recipe|}}
+    <div>
+        <h4><a href="/recipe/{{recipe.id}}">{{recipe.name}}</a></h4>        
+    </div>
+    <div>
+        <button data-id="{{recipe.id}}">DELETE</button>
+    </div>
+    {{/each}}
+</section>
+{{/if}}
+
+<script src="./js/profile.js"></script>
