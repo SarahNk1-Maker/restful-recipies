@@ -2,16 +2,16 @@
     {
       "username": "Alex",
       "email": "alex@gmail.com",
-      "password": 123456
+      "password": "123456"
     },
     {
       "username": "Ben",
       "email": "ben@gmail.com",
-      "password": 123456
+      "password": "123456"
     },
     {
       "username": "Sarah",
       "email": "sarah@gmail.com",
-      "password": 123456
+      "password": "123456"
     }
 ]
