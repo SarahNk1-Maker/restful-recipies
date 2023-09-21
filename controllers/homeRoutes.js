@@ -37,4 +37,27 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
   
+// Route handler to get uses profile data and render their profile page. 
+// Use customer middleware "withAuth" to restrict access to logged-in users only.
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID and include that user's recipes.
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Recipe }],
+    });
+
+    //Serialize the User and Recipe data.
+    const user = userData.get({ plain: true });
+
+    //Use the serialized data to render the user's profile page.
+    res.render('chef', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
