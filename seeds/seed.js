@@ -1,0 +1,1 @@
+//Script to seed the databased using the adjacent .json files. We can test some data this way without needing a front end.
