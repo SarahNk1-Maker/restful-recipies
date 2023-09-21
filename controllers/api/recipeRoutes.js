@@ -1,26 +1,54 @@
-
 const router = express.Router();
 const { Recipe } = require('../models'); // Import your Recipe model
 const withAuth = require('../utils/auth');
 
-// Route to render the recipe page based on ID
-router.get('/recipe/:id',withAuth, async (req, res) => {
+// Route to create a new recipe (POST)
+router.post('/recipe',withAuth, async (req, res) => {
+  try {
+    // Extract recipe data from the request body
+    const { title, description, ingredients, instructions, prep_time, cook_time, user_id } = req.body;
+
+    // Create a new recipe in the database
+    const newRecipe = await Recipe.create({
+      title,
+      description,
+      ingredients,
+      instructions,
+      prep_time,
+      cook_time,
+      user_id,
+    });
+
+    // Send a success response.
+    res.status(201).json(newRecipe); 
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+// Route to delete a recipe based on ID 
+router.delete('/recipe/:id', async (req, res) => {
   try {
     const recipeId = req.params.id;
 
     // Query the database to find the recipe by its ID
-    const recipe = await Recipe.findById(recipeId);
+    const recipe = await Recipe.findByPk(recipeId);
 
     if (!recipe) {
-      return res.status(404).send('Recipe not found');
+      return res.status(404).json({ error: 'Recipe not found' });
     }
 
-    // Render the Handlebars template with the retrieved recipe data
-    res.render('recipe', { recipe }); // 'recipe' is the name of your Handlebars template
+    // Delete the recipe from the database
+    await recipe.destroy();
+
+    // Send a success response or a message indicating successful deletion
+    res.status(204).send(); // 204 No Content status for successful deletion
   } catch (error) {
     console.error(error);
-    res.status(500).send('Internal Server Error');
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
 module.exports = router;
+
