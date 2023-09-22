@@ -1,16 +1,15 @@
-//Script logic to add and remove recipies.
-
-//Event listener to create a new recipe.
-const newFormHandler = async (event) => {
+// Ensure that the code runs after the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+  // Event listener to create a new recipe.
+  const newFormHandler = async (event) => {
     event.preventDefault();
-  
+
     const title = document.querySelector('#recipe-title').value.trim();
     const description = document.querySelector('#recipe-desc').value.trim();
     const ingredients = document.querySelector('#recipe-ingredients').value.trim();
     const instructions = document.querySelector('#recipe-instructions').value.trim();
     const prep_time = document.querySelector('#recipe-prepTime').value.trim();
-    const cook_time= document.querySelector('#recipe-cookTime').value.trim();
-
+    const cook_time = document.querySelector('#recipe-cookTime').value.trim();
 
     if (title && description && ingredients && instructions && prep_time && cook_time) {
       const response = await fetch(`/api/recipes`, {
@@ -20,7 +19,7 @@ const newFormHandler = async (event) => {
           'Content-Type': 'application/json',
         },
       });
-  
+
       if (response.ok) {
         document.location.replace('/profile');
       } else {
@@ -28,16 +27,16 @@ const newFormHandler = async (event) => {
       }
     }
   };
-  
-  //EVent lsitener to delete a recipe.
+
+  // Event listener to delete a recipe.
   const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
-  
+
       const response = await fetch(`/api/recipes/${id}`, {
         method: 'DELETE',
       });
-  
+
       if (response.ok) {
         document.location.replace('/profile');
       } else {
@@ -45,12 +44,16 @@ const newFormHandler = async (event) => {
       }
     }
   };
-  
-  // document
-  //   .querySelector('.new-recipe-form')
-  //   .addEventListener('submit', newFormHandler);
-  
-  // document
-  //   .querySelector('.recipe-list')
-  //   .addEventListener('click', delButtonHandler);
-  
+
+  // Ensure that the elements with the specified IDs exist before adding event listeners
+  const newRecipeForm = document.querySelector('#newRecipeForm');
+  const recipeList = document.querySelector('#recipeList');
+
+  if (newRecipeForm) {
+    newRecipeForm.addEventListener('submit', newFormHandler);
+  }
+
+  if (recipeList) {
+    recipeList.addEventListener('click', delButtonHandler);
+  }
+});

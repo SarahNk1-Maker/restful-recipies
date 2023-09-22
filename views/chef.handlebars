@@ -1,4 +1,4 @@
-{{!-- The users profile page. Shows their own recipies. --}}
+{{!-- The users profile page. Shows their own recipes. --}}
 <div>
   <div>
     <h2>Welcome, {{username}}!</h2>
@@ -6,39 +6,39 @@
 </div>
 
 <section id="newRecipeForm">
-    <h3>Create a New Recipie:</h3>
-    <form>
-
+    <h3>Create a New Recipe:</h3>
+    <form id="recipeForm">
         <div>
-            <label>Recipe name: </label>
-            <input>
+            <label for="recipeName">Recipe name:</label>
+            <input type="text" id="recipe-title">
         </div>
 
         <div>
-            <label>Description: </label>
-            <input>
+            <label for="description">Description:</label>
+            <input type="text" id="recipe-desc">
         </div>
 
         <div>
-            <label>Ingredients List:</label>
-            <input>
+            <label for="ingredientsList">Ingredients List:</label>
+            <input type="text" id="recipe-ingredients">
         </div>
 
         <div>
-            <label>Instructions:</label>
-            <input>
+            <label for="instructions">Instructions:</label>
+            <input type="text" id="recipe-instructions">
         </div>
 
         <div>
-            <label>Prep Time:</label>
-            <input>
+            <label for="prepTime">Prep Time:</label>
+            <input type="text" id="recipe-prepTime">
         </div>
 
         <div>
-            <label>Cook Time:</label>
-            <input>
+            <label for="cookTime">Cook Time:</label>
+            <input type="text" id="recipe-cookTime">
         </div>
 
+        <button type="submit">Create Recipe</button>
     </form>
 </section>
 
