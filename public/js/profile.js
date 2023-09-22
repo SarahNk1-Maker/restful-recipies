@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   // Ensure that the elements with the specified IDs exist before adding event listeners
-  const newRecipeForm = document.querySelector('.new-recipe-form');
-  const recipeList = document.querySelector('.recipe-list');
+  const newRecipeForm = document.querySelector('#newRecipeForm');
+  const recipeList = document.querySelector('#recipeList');
 
   if (newRecipeForm) {
     newRecipeForm.addEventListener('submit', newFormHandler);
