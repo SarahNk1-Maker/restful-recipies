@@ -1,14 +1,7 @@
-{{!-- A detailed page for each recipe. --}}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Recipe</title> 
-</head>
-<body>
-    <!-- Define the template in a script tag with an id -->
-    <script id="recipe-template" type="text/x-handlebars-template">
-        <h1>{{ title }}</h1>
-        <h2>Chef: {{recipe.user_id}} </h2>
+<!-- Define the template in a script tag with an id -->
+    <section id="recipe-template" type="text/x-handlebars-template">
+        <h1>{{ title }} alexandra</h1>
+        <h2>Chef: {{user_id}} </h2>
         <h2>Description: {{ description}}</h2>
         <p>Prep Time: {{ prep_time }}</p>
         <p>Cook Time: {{ cook_time }}</p>
@@ -24,12 +17,9 @@
                 <li>{{ this }}</li>
             {{/each}}
         </ol>
-    </script>
+    </section>
 
     <!-- Create a container where the recipe will be rendered -->
     <div id="recipe-container"></div>
 
-    <!-- Include the external JavaScript file -->
-    <script src="recipe.js"></script>
-</body>
-</html>
+    <!-- Include the external JavaScript file  <script src="recipe.js"></script>-->
