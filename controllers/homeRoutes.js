@@ -75,11 +75,12 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     //Serialize the User and Recipe data.
-    const user = userData.get({ plain: true });
+    const userRecipes = userData.get({ plain: true });
 
     //Use the serialized data to render the user's profile page.
+    console.log(userRecipes)
     res.render('chef', {
-      ...user,
+      ...userRecipes,
       logged_in: true
     });
   } catch (err) {
