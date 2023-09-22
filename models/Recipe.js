@@ -37,7 +37,6 @@ Recipe.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -50,7 +49,7 @@ Recipe.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Recipe',
+    modelName: 'recipe',
   }
 );
 
