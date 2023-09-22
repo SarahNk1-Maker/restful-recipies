@@ -29,13 +29,13 @@ router.get('/', async (req, res) => {
 });
 
 // Route to render the recipe page based on ID
-router.get('/recipe/:id', withAuth, async (req, res) => {
+router.get('/recipe/:id', async (req, res) => {
   try {
     const recipeId = req.params.id;
 
     // Query the database to find the recipe by its ID
     const recipe = await Recipe.findByPk(recipeId); // find by Pk ??? was findById before
-
+    console.log(recipe)
     if (!recipe) {
       return res.status(404).send('Recipe not found');
     }
