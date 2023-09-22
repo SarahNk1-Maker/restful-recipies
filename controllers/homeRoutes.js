@@ -18,9 +18,9 @@ router.get('/', async (req, res) => {
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      recipes, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      recipes,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     console.log(err)
@@ -29,35 +29,41 @@ router.get('/', async (req, res) => {
 });
 
 // Route to render the recipe page based on ID
-router.get('/recipe/:id',withAuth, async (req, res) => {
+router.get('/recipe/:id', withAuth, async (req, res) => {
   try {
     const recipeId = req.params.id;
 
     // Query the database to find the recipe by its ID
-    const recipe = await Recipe.findById(recipeId);
+    const recipe = await Recipe.findByPk(recipeId); // find by Pk ??? was findById before
 
     if (!recipe) {
       return res.status(404).send('Recipe not found');
     }
 
     // Render the Handlebars template with the retrieved recipe data
-    res.render('recipe', { recipe }); 
+    res.render('recipe', { recipe });
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal Server Error');
   }
 });
 
-router.get('/login', withAuth, (req, res) => {
+router.get('/login', (req, res) => {
+  try {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
+      console.log('User is already logged in. Redirecting to /profile.');
       res.redirect('/profile');
       return;
-    } 
-    
-   res.render('login');
-  });
-  
+    }
+    console.log("rendering login page");
+    res.render('login');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server Error');
+  }
+});
+
 // Route handler to get uses profile data and render their profile page. 
 // Use customer middleware "withAuth" to restrict access to logged-in users only.
 router.get('/profile', withAuth, async (req, res) => {
@@ -78,6 +84,7 @@ router.get('/profile', withAuth, async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+    console.log(err)
   }
 });
 

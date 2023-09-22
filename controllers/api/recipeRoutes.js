@@ -16,7 +16,7 @@ router.post('/recipe',withAuth, async (req, res) => {
       instructions,
       prep_time,
       cook_time,
-      user_id,
+      user_id: req.session.user_id,
     });
 
     // Send a success response.
