@@ -3,7 +3,7 @@ const { Recipe } = require('../../models'); // Import your Recipe model
 const withAuth = require('../../utils/auth'); //Import our utility function, why this one need specify file instead of just folder?
 
 // Route to create a new recipe (POST)
-router.post('/recipe',withAuth, async (req, res) => {
+router.post('/recipe', async (req, res) => {
   try {
     // Extract recipe data from the request body
     const { title, description, ingredients, instructions, prep_time, cook_time, user_id } = req.body;
