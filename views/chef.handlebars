@@ -46,14 +46,14 @@
 <section id="chefRecipeList">
     <h3>Current Recipes:</h3>
     {{#each recipes as |recipe|}}
-    <div>
-        <h4><a href="/recipe/{{recipe.id}}">{{recipe.title}}</a></h4>        
-    </div>
-    <div>
+      <div>
+        <h4><a href="/recipe/{{recipe.id}}">{{recipe.title}}</a></h4>
+      </div>
+      <div>
         <button data-id="{{recipe.id}}">DELETE</button>
-    </div>
+      </div>
     {{/each}}
-</section>
+  </section>
 {{/if}}
 
 <script src="./js/profile.js"></script>
