@@ -1,5 +1,3 @@
-// Ingredients list, prep time, cook time, instructions
-
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 

@@ -42,9 +42,9 @@
     </form>
 </section>
 
-{{#if recipe.length}}
+{{#if recipes.length}}
 <section id="chefRecipeList">
-    <h3>Current Projects:</h3>
+    <h3>Current Recipes:</h3>
     {{#each recipes as |recipe|}}
     <div>
         <h4><a href="/recipe/{{recipe.id}}">{{recipe.title}}</a></h4>        
