@@ -14,9 +14,13 @@ const seedDatabase = async () => {
   });
 
   for (const recipe of recipeData) {
+  // Use the user_id from the recipe data to associate it with a user
+  const userID = recipe.user_id;
+
+    // Create the recipe and associate it with the user
     await Recipe.create({
       ...recipe,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+      user_id: userID,
     });
   }
 
