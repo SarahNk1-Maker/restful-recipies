@@ -47,13 +47,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Ensure that the elements with the specified IDs exist before adding event listeners
   const newRecipeForm = document.querySelector('#newRecipeForm');
-  const recipeList = document.querySelector('#recipeList');
+  const chefRecipeList = document.querySelector('#chefRecipeList');
 
   if (newRecipeForm) {
     newRecipeForm.addEventListener('submit', newFormHandler);
   }
 
-  if (recipeList) {
-    recipeList.addEventListener('click', delButtonHandler);
+  if (chefRecipeList) {
+    chefRecipeList.addEventListener('click', delButtonHandler);
   }
 });
