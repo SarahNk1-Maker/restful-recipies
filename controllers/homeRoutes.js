@@ -50,7 +50,7 @@ router.get("/all", async (req, res) => {
     console.log(recipes);
     // Pass serialized data and session flag into template
     res.render("recipes", {
-      ...chosenRecipe,
+      ...recipes,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
