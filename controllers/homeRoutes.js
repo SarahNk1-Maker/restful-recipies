@@ -31,20 +31,23 @@ router.get('/', async (req, res) => {
 // Route to render the recipe page based on ID
 router.get('/recipe/:id', async (req, res) => {
   try {
-    const recipeId = req.params.id;
+    const recipeData = await Recipe.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
 
-    // Query the database to find the recipe by its ID
-    const recipe = await Recipe.findByPk(recipeId); // find by Pk ??? was findById before
-    console.log(recipe)
-    if (!recipe) {
-      return res.status(404).send('Recipe not found');
-    }
+    const recipe = recipeData.get({ plain: true });
 
-    // Render the Handlebars template with the retrieved recipe data
-    res.render('recipe', { recipe });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Internal Server Error');
+    res.render('recipe', {
+      ...recipe,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
