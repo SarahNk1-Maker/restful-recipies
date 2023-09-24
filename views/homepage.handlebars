@@ -1,17 +1,41 @@
-{{!-- The homepage. Shows the most recent/mostliked recipie and a reminder to log in to see more. --}}
 <!-- Loop over each recipe post in the recipe array -->
-{{#each recipe as |recipe| }}
+
 <div class="row mb-4 recipe">
   <div class="col-md-5">
     <h2>
-      <a href="/recipe/{{recipe_id}}">{{recipe.title}}</a>
+      <a href="/recipe/{{id}}">{{title}}</a>
     </h2>
- <p>Created by {{recipe.user_id}}</p>
+ <p>Created by {{user.username}}</p>
   </div>
   <div class="col-md-7">
     <p>
-      {{recipe.description}}
+      {{description}}
+      <p>Prep Time: {{prep_time}}</p>
+      <p>Cook Time: {{cook_time}}</p>
     </p>
   </div>
 </div>
-{{/each}}
+ 
+          {{!-- {{#if (randonElement recipe) as |recipe|}}
+            <section id="recipe-template" type="text/x-handlebars-template">
+              <h1>{{recipe.title}}</h1>
+              <h2>Chef: {{recipe.user_id}} </h2>
+              <h2>Description: {{recipe.description}}</h2>
+              <p>Prep Time: {{recipe.prep_time}}</p>
+              <p>Cook Time: {{recipe.cook_time}}</p>
+              <h3>Ingredients: {{recipe.ingredients}}</h3>
+              <h3>Instructions: {{recipe.instructions}}</h3>
+              <h4>Need more recipe ideas?
+                <a href="/login">Login or Signup!</a>
+              </h4>
+            </section>
+          {{/with}}
+        {{else}}
+          {{{body}}}
+          {{#if logged_in}}
+            <p>Hungry? Let's cook</p>
+          {{else}}
+            <p><a href="/login">Login or Signup to see recipes!</a></p>
+          {{/if}} --}}
+
+      
