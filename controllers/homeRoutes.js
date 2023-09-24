@@ -49,7 +49,7 @@ router.get("/all", async (req, res) => {
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
     console.log(recipes);
     // Pass serialized data and session flag into template
-    res.render("recipes", {
+    res.render("allRecipes", {
       ...recipes,
       logged_in: req.session.logged_in,
     });
