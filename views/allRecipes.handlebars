@@ -4,7 +4,11 @@
     <h2>
       <a href="/recipe/{{recipe.id}}">{{recipe.title}}</a>
     </h2>
- <p>Created by {{recipe.user.username}}</p>
+    {{#if recipe.user.username}}
+    <p>Created by {{recipe.user.username}}</p>
+    {{else}}
+    <p>Created by an anonymous eukaryotic being.</p>
+    {{/if}}
   </div>
   <div class="col-md-7">
     <p>
