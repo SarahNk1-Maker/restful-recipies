@@ -48,9 +48,9 @@ router.get("/all", async (req, res) => {
     // Serialize data so the template can read it
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
     console.log(recipes);
-    // Pass serialized data and session flag into template
+    // Pass serialized data to template as a propery of the object literal.
     res.render("allRecipes", {
-      ...recipes,
+      recipes: recipes, // Pass the recipes data as an object property
       logged_in: req.session.logged_in,
     });
   } catch (err) {
