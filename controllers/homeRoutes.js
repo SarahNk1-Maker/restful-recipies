@@ -10,16 +10,18 @@ router.get('/', async (req, res) => {
         {
           model: User,
           attributes: ['username'],
-        },
+        }
       ],
     });
 
     // Serialize data so the template can read it
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-
+    console.log(recipes)
     // Pass serialized data and session flag into template
+    const recipe_id = recipes[Math.floor(Math.random() * recipes.length)].id
+    const chosenRecipe = recipes[recipe_id - 1];
     res.render('homepage', {
-      recipes,
+      ...chosenRecipe,
       logged_in: req.session.logged_in
     });
   } catch (err) {
