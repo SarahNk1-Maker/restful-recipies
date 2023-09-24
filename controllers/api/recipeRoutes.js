@@ -3,7 +3,7 @@ const { Recipe } = require('../../models'); // Import your Recipe model
 const withAuth = require('../../utils/auth'); //Import our utility function, why this one need specify file instead of just folder?
 
 // Route to create a new recipe (POST)
-router.post('/',withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     // Extract recipe data from the request body
     const { title, description, ingredients, instructions, prep_time, cook_time, user_id } = req.body;
@@ -20,7 +20,7 @@ router.post('/',withAuth, async (req, res) => {
     });
 
     // Send a success response.
-    res.status(201).json(newRecipe); 
+    res.status(201).json(newRecipe);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
@@ -34,7 +34,7 @@ router.delete('/:id', async (req, res) => {
 
     // Query the database to find the recipe by its ID
     const recipe = await Recipe.findByPk(recipeId);
-console.log(recipe)
+    console.log(recipe)
     if (!recipe) {
       return res.status(404).json({ error: 'Recipe not found' });
     }

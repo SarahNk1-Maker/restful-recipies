@@ -1,25 +1,15 @@
 <!-- Define the template in a script tag with an id -->
-    <section id="recipe-template" type="text/x-handlebars-template">
-        <h1>{{ title }} alexandra</h1>
-        <h2>Chef: {{user_id}} </h2>
-        <h2>Description: {{ description}}</h2>
-        <p>Prep Time: {{ prep_time }}</p>
-        <p>Cook Time: {{ cook_time }}</p>
-        <h2>Ingredients:</h2>
-        <ul>
-            {{#each ingredients}}
-                <li>{{ this }}</li>
-            {{/each}}
-        </ul>
-        <h2>Instructions:</h2>
-        <ol>
-            {{#each instructions}}
-                <li>{{ this }}</li>
-            {{/each}}
-        </ol>
-    </section>
+<section id="recipe-template" type="text/x-handlebars-template">
+  <h1>{{title}} alexandra</h1>
+  <h2>Chef: {{user_id}} </h2>
+  <h2>Description: {{description}}</h2>
+  <p>Prep Time: {{prep_time}}</p>
+  <p>Cook Time: {{cook_time}}</p>
+  <h3>Ingredients: {{ingredients}}</h3>
+  <h3>Instructions: {{instructions}}</h3>
+</section>
 
-    <!-- Create a container where the recipe will be rendered -->
-    <div id="recipe-container"></div>
+<!-- Create a container where the recipe will be rendered -->
+<div id="recipe-container"></div>
 
-    <!-- Include the external JavaScript file  <script src="recipe.js"></script>-->
+<!-- Include the external JavaScript file  <script src="recipe.js"></script>-->
