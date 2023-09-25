@@ -1,56 +1,101 @@
+
 <html lang="en">
 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restful Recipes</title>
-    <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+   <style>
+    header {
+            background-color:burlywood;
+            margin: 2em auto;            
+            font-family: Consolas, 'Liberation Mono', Courier, monospace;
+            text-align: center;	
+        }
+      header a {
+            color: #fff;
+
+        }
+    nav {
+            background-color:chocolate;
+        }
+       .hero p {
+            color: #333;
+            margin: 2em auto;            
+            font-family: Consolas, 'Liberation Mono', Courier, monospace;
+            text-align: center;	
+        }
+
+        /* Search input background color */
+        .search-container {
+            background-color: #fff;
+             margin: 2em auto;            
+            font-family: Consolas, 'Liberation Mono', Courier, monospace;
+            text-align: center;	
+        }
+
+        /* Search button background color */
+        #search-button {
+            background-color:chocolate;
+        }
+     .container {
+        background-color: antiquewhite;
+        margin: 2em auto;            
+            font-family: Consolas, 'Liberation Mono', Courier, monospace;
+            text-align: center;	
+     }
+   </style>
   </head>
 
-  <body>
-    <div class="flex-column justify-space-around">
-      <header class="display-flex justify-space-between align-center p-2">
-        <h1>
-
-          <a href="/">Restful Recipes</a>
-        </h1>
-        <nav>
-          <a href="/">Home</a>
+ 
+<body>
+    <div class="flex-column pure-g">
+        <header class="pure-u-1 p-2">
+            <h1 class="pure-u-1-2">
+                <a href="/" class="pure-menu-heading">Restful Recipes</a>
+            </h1>
+            <nav class="pure-u-1-2">
+                <a href="/">Home</a>
           <!-- Conditionally render login or logout links -->
-          {{#if logged_in}}
-            <a href="/profile">Profile</a>
-            |
-            <button class="no-button" id="logout">Logout</button>
-          {{else}}
-            <a href="/login">Login</a>
-          {{/if}}
-          <a href="/all">All Recipes</a>
+                {{#if logged_in}}
+                <a href="/profile" class="pure-menu-link">Profile</a>
+                |
+                <button class="no-button pure-button" id="logout">Logout</button>
+                {{else}}
+                <a href="/login" class="pure-menu-link">Login</a>
+                {{/if}}
+              <a href="/all">All Recipes</a>
         </nav>
-        <div class="hero">
-          <p>Discover delicious recipes for every occasion</p>
-          <div class="search-container">
-            <input
-              type="text"
-              id="search-input"
-              placeholder="What are you craving?"
-            />
-            <button id="search-button">Start cooking!</button>
-          </div>
+        </header>
+        <div class="hero pure-g">
+            <p class="pure-u-1">Discover delicious recipes for every occasion</p>
+            <div class="search-container pure-u-1">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="What are you craving?"
+                    class="pure-input"
+                />
+                <button id="search-button" class="pure-button pure-button-primary">Start cooking!</button>
+                
+            </div>
+            <!-- Add an image here -->
+             <img src="/images/Chicken-Parm-IMAGE-1.jpg" alt="Image Description" class="pure-img">
         </div>
-      </header>
-      <main class="container container-fluid mt-5">
-        <!-- Render the layout -->
-       {{{body}}}
-      </main>
-      <footer>
+        <main class="container container-fluid mt-5">
+            <!-- Render the layout -->
+            {{{body}}}
+        </main>
+        <footer class="pure-g">
 
-      </footer>
+        </footer>
     </div>
 
-    <!-- Render script for logged in users only -->
+    <!-- Render script for logged-in users only -->
     {{#if logged_in}}
-      <script src="/js/logout.js"></script>
+    <script src="/js/logout.js"></script>
     {{/if}}
-  </body>
+</body>
 
 </html>
