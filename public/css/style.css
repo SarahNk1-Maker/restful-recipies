@@ -86,5 +86,85 @@ nav a {
         padding: 4em;
     }
 }
+header {
+  background-color: burlywood;
+  margin: 2em auto;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  text-align: center;
+}
+header a {
+  color: #fff;
+}
+nav {
+  background-color: chocolate;
+}
+.hero p {
+  color: #333;
+  margin: 2em auto;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  text-align: center;
+}
 
-  
+/* Search input background color */
+.search-container {
+  background-color: #fff;
+  margin: 2em auto;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  text-align: center;
+}
+
+/* Search button background color */
+#search-button {
+  background-color: chocolate;
+}
+.container {
+  background-color: antiquewhite;
+  margin: 2em auto;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  text-align: center;
+}
+
+/* Frooter styles */
+
+.footer {
+  border-top: 1px solid #eee;
+  font-size: 87.5%;
+  padding: 1.1429em;
+}
+
+ul.legal-links {
+  list-style: none;
+}
+
+li {
+  display: list-item;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.legal {
+    line-height: 1;
+
+}
+
+.pure-g {
+    align-content: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.pure-u-1 {
+    width: 80%;
+  }
+
+.pure-u-1.u-sm-1-2 {
+    text-align: right;
+}

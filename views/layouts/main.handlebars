@@ -1,24 +1,33 @@
-
 <html lang="en">
 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restful Recipes</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/style.css">
+=======
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+>>>>>>> main
   </head>
 
- 
-<body>
+  <body>
     <div class="flex-column pure-g">
-        <header class="pure-u-1 p-2">
-            <h1 class="pure-u-1-2">
-                <a href="/" class="pure-menu-heading">Restful Recipes</a>
-            </h1>
-            <nav class="pure-u-1-2">
-                <a href="/">Home</a>
+      <header class="pure-u-1 p-2">
+        <h1 class="pure-u-1-2">
+          <a href="/" class="pure-menu-heading">Restful Recipes</a>
+        </h1>
+        <nav class="pure-u-1-2">
+          <a href="/">Home</a>
           <!-- Conditionally render login or logout links -->
+<<<<<<< HEAD
                 {{#if logged_in}}
                 <a href="/profile" class="pure-menu-link">Profile</a>
                 
@@ -38,20 +47,76 @@
             class="pure-input"/>
         <button id="search-button" class="pure-button pure-button-primary">Start cooking!</button>
 </div>
+=======
+          {{#if logged_in}}
+            <a href="/profile" class="pure-menu-link">Profile</a>
+            |
+            <button class="no-button pure-button" id="logout">Logout</button>
+          {{else}}
+            <a href="/login" class="pure-menu-link">Login</a>
+          {{/if}}
+          <a href="/all">All Recipes</a>
+        </nav>
+      </header>
+      <div class="hero pure-g">
+        <p class="pure-u-1">Discover delicious recipes for every occasion</p>
+        <div class="search-container pure-u-1">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="What are you craving?"
+            class="pure-input"
+          />
+          <button
+            id="search-button"
+            class="pure-button pure-button-primary"
+          >Start cooking!</button>
+
+>>>>>>> main
         </div>
-        <main class="container container-fluid mt-5">
-            <!-- Render the layout -->
-            {{{body}}}
-        </main>
-        <footer class="pure-g">
+        <!-- Add an image here -->
+        <img
+          src="/images/Chicken-Parm-IMAGE-1.jpg"
+          alt="Image Description"
+          class="pure-img"
+        />
+      </div>
+      <main class="container container-fluid mt-5">
+        <!-- Render the layout -->
+        {{{body}}}
+      </main>
+      <footer class="pure-g">
 
-        </footer>
+      </footer>
     </div>
+    <footer class="footer">
+      <div class="legal pure-g">
+        <div class="pure-u-1 u-sm-1-2">
+          <p class="legal-license">cooking with a pinch of ❤️ from 2023<br
+            />Got questions? We got an answer!
+            <a href="https://github.com/SarahNk1-Maker/restful-recipies">On GitHub</a>
+          </p>
+        </div>
+        <div class="pure-u-1 u-sm-1-2">
+          <ul class="legal-links">
+            <li>
+              <a href="https://github.com/SarahNk1-Maker">Sarah</a>
+            </li>
+            <li>
+                <a href="https://github.com/BenACooper">Ben</a>
+            </li>
+            <li>
+              <a href="https://github.com/alexandrazykova">Alex</a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
+    </footer>
     <!-- Render script for logged-in users only -->
     {{#if logged_in}}
-    <script src="/js/logout.js"></script>
+      <script src="/js/logout.js"></script>
     {{/if}}
-</body>
+  </body>
 
 </html>
