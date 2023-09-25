@@ -33,6 +33,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Route to render all recipes to body.
 router.get("/all", async (req, res) => {
   try {
     // Get all recipes and JOIN with user data

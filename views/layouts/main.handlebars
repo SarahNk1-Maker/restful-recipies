@@ -15,6 +15,7 @@
           <a href="/">Restful Recipes</a>
         </h1>
         <nav>
+          <a href="/">Home</a>
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
             <a href="/profile">Profile</a>
@@ -23,6 +24,7 @@
           {{else}}
             <a href="/login">Login</a>
           {{/if}}
+          <a href="/all">All Recipes</a>
         </nav>
         <div class="hero">
           <p>Discover delicious recipes for every occasion</p>
