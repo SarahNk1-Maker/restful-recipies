@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Event listener to delete a recipe.
   const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
+    if (event.target.hasAttribute('recipeData-id')) {
+      const id = event.target.getAttribute('recipeData-id');
 
       const response = await fetch(`/api/recipes/${id}`, {
         method: 'DELETE',
@@ -57,3 +57,20 @@ document.addEventListener('DOMContentLoaded', function () {
     chefRecipeList.addEventListener('click', delButtonHandler);
   }
 });
+
+  // Event listener to delete a user.
+  const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('userData-id')) {
+      const id = event.target.getAttribute('userData-id');
+
+      const response = await fetch(`/api/users/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to delete recipe');
+      }
+    }
+  };
