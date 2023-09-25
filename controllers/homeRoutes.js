@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 
     // Serialize data so the template can read it
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-    console.log(recipes);
+    // console.log(recipes);
 
     // Choose one of the recipes at random.
     const recipe_id = recipes[Math.floor(Math.random() * recipes.length)].id;
@@ -48,7 +48,7 @@ router.get("/all", async (req, res) => {
 
     // Serialize data so the template can read it
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-    console.log(recipes);
+    // console.log(recipes);
     // Pass serialized data to template as a propery of the object literal.
     res.render("allRecipes", {
       recipes: recipes, // Pass the recipes data as an object property
@@ -61,7 +61,7 @@ router.get("/all", async (req, res) => {
 });
 
 //Route to find recipes by search input.
-router.get("/search", async, (req, res)) => {
+router.get("/search", async (req, res) => {
 
   //Get all recipes but exclude data unrelated to search.
   try {
@@ -70,10 +70,11 @@ router.get("/search", async, (req, res)) => {
     })
 
       // Serialize data so the template can read it
-      const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+      const searchData = recipeData.map((recipe) => recipe.get({ plain: true }));
+      console.log(searchData)
 
       res.render("search", {
-        recipes: recipes, // Pass the recipes data as an object property
+        recipes: searchData, // Pass the search data as an object property
         logged_in: req.session.logged_in,
       });
 
@@ -81,11 +82,6 @@ router.get("/search", async, (req, res)) => {
     console.log(err);
     res.status(500).json(err);
   }
-}
-
-const userData = await User.findByPk(req.session.user_id, {
-  attributes: { exclude: ["password"] },
-  include: [{ model: Recipe }],
 });
 
 // Route to render the recipe page based on ID
