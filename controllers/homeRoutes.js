@@ -61,34 +61,35 @@ router.get("/all", async (req, res) => {
 });
 
 //Route to find recipes by search input.
-const { Op } = require('sequelize'); // Import Sequelize's Op for complex queries
+const { Op } = require("sequelize"); // Import Sequelize's Op for complex queries
 
 router.get("/search", async (req, res) => {
   try {
-    const searchTerm = req.query.term; // Get the search term from the query parameters
-
+    // Get the search term from the query parameters
+    const searchTerm = req.query.term;
     // Split the searchTerm into individual words
-    const searchWords = searchTerm.split(' ').map(word => word.toLowerCase());
+    const searchWords = searchTerm.split(" ").map((word) => word.toLowerCase());
 
-    // Find recipes where either title or tag contains any of the searchWords (case-insensitive)
+    // Find recipes where the tag contains any of the searchWords
     const recipeData = await Recipe.findAll({
-      attributes: { exclude: ["description", "ingredients", "instructions", "user_id"] },
+      attributes: { exclude: ["ingredients", "instructions"] }, // Remove the extra comma here
       where: {
-        [Op.or]: searchWords.map(word => ({
+        [Op.or]: searchWords.map((word) => ({
           [Op.or]: [
             Sequelize.where(
-              Sequelize.fn('LOWER', Sequelize.col('title')),
-              'LIKE',
-              `%${word}%`
-            ),
-            Sequelize.where(
-              Sequelize.fn('LOWER', Sequelize.col('tag')),
-              'LIKE',
+              Sequelize.fn("LOWER", Sequelize.col("tag")),
+              "LIKE",
               `%${word}%`
             ),
           ],
         })),
       },
+      include: [
+        {
+          model: User, // Assuming User is the model for user-related data
+          attributes: ["username"],
+        },
+      ],
     });
 
     // Serialize data so the template can read it
@@ -98,13 +99,11 @@ router.get("/search", async (req, res) => {
       recipes: searchData, // Pass the search data as an object property
       logged_in: req.session.logged_in,
     });
-
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
-
 
 // Route to render the recipe page based on ID
 router.get("/recipe/:id", async (req, res) => {
