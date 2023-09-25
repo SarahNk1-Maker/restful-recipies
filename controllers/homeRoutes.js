@@ -61,7 +61,6 @@ router.get("/all", async (req, res) => {
 });
 
 //Route to find recipes by search input.
-const { Op } = require('sequelize');
 const { Op } = require('sequelize'); // Import Sequelize's Op for complex queries
 
 router.get("/search", async (req, res) => {
