@@ -126,7 +126,7 @@ nav {
 
 /* Frooter styles */
 
-.footer {
+footer {
   border-top: 1px solid #eee;
   font-size: 87.5%;
   padding: 1.1429em;
@@ -161,10 +161,10 @@ ul {
     flex-flow: row wrap;
 }
 
-.pure-u-1 {
-    width: 80%;
-  }
-
-.pure-u-1.u-sm-1-2 {
+.legal-links {
     text-align: right;
+}
+
+li {
+  color: #333;
 }
