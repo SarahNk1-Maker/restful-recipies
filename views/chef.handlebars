@@ -50,10 +50,12 @@
         <h4><a href="/recipe/{{recipe.id}}">{{recipe.title}}</a></h4>
       </div>
       <div>
-        <button data-id="{{recipe.id}}">DELETE</button>
+        <button recipeData-id="{{recipe.id}}">DELETE</button>
       </div>
     {{/each}}
   </section>
 {{/if}}
+
+<button id='userDeleteBtn' userData-id="{{id}}">Delete Account</button>
 
 <script src="./js/profile.js"></script>
