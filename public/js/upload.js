@@ -10,19 +10,6 @@ var myWidget = cloudinary.createUploadWidget({
     }
 )
 
-cloudinary.openUploadWidget({
-    cloudName: "cloud", uploadPreset: "upload",
-    showCompletedButton: true,  
-    }, (error, result) => {
-         if (!error && result.event === "show-completed") {
-       result.info.items.forEach((item) => {
-         console.log(`show completed for item with id:
-        ${item.uploadInfo.public_id}`); //uploadInfo is the data returned in the upload response
-      });
-    }
-  });
-
-
 document.getElementById("upload_widget").addEventListener("click", function () {
     myWidget.open();
 },
