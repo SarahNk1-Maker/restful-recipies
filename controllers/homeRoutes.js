@@ -61,28 +61,51 @@ router.get("/all", async (req, res) => {
 });
 
 //Route to find recipes by search input.
+const { Op } = require('sequelize');
+const { Op } = require('sequelize'); // Import Sequelize's Op for complex queries
+
 router.get("/search", async (req, res) => {
-
-  //Get all recipes but exclude data unrelated to search.
   try {
+    const searchTerm = req.query.term; // Get the search term from the query parameters
+
+    // Split the searchTerm into individual words
+    const searchWords = searchTerm.split(' ').map(word => word.toLowerCase());
+
+    // Find recipes where either title or tag contains any of the searchWords (case-insensitive)
     const recipeData = await Recipe.findAll({
-      attributes: { exclude: ["description", "ingredients", "instructions", "user_id"]}
-    })
+      attributes: { exclude: ["description", "ingredients", "instructions", "user_id"] },
+      where: {
+        [Op.or]: searchWords.map(word => ({
+          [Op.or]: [
+            Sequelize.where(
+              Sequelize.fn('LOWER', Sequelize.col('title')),
+              'LIKE',
+              `%${word}%`
+            ),
+            Sequelize.where(
+              Sequelize.fn('LOWER', Sequelize.col('tag')),
+              'LIKE',
+              `%${word}%`
+            ),
+          ],
+        })),
+      },
+    });
 
-      // Serialize data so the template can read it
-      const searchData = recipeData.map((recipe) => recipe.get({ plain: true }));
-      console.log(searchData)
+    // Serialize data so the template can read it
+    const searchData = recipeData.map((recipe) => recipe.get({ plain: true }));
 
-      res.render("search", {
-        recipes: searchData, // Pass the search data as an object property
-        logged_in: req.session.logged_in,
-      });
+    res.render("search", {
+      recipes: searchData, // Pass the search data as an object property
+      logged_in: req.session.logged_in,
+    });
 
-  }  catch (err) {
+  } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
 
 // Route to render the recipe page based on ID
 router.get("/recipe/:id", async (req, res) => {
