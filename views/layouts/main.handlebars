@@ -6,46 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restful Recipes</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
-   <style>
-    header {
-            background-color:burlywood;
-            margin: 2em auto;            
-            font-family: Consolas, 'Liberation Mono', Courier, monospace;
-            text-align: center;	
-        }
-      header a {
-            color: #fff;
-
-        }
-    nav {
-            background-color:chocolate;
-        }
-       .hero p {
-            color: #333;
-            margin: 2em auto;            
-            font-family: Consolas, 'Liberation Mono', Courier, monospace;
-            text-align: center;	
-        }
-
-        /* Search input background color */
-        .search-container {
-            background-color: #fff;
-             margin: 2em auto;            
-            font-family: Consolas, 'Liberation Mono', Courier, monospace;
-            text-align: center;	
-        }
-
-        /* Search button background color */
-        #search-button {
-            background-color:chocolate;
-        }
-     .container {
-        background-color: antiquewhite;
-        margin: 2em auto;            
-            font-family: Consolas, 'Liberation Mono', Courier, monospace;
-            text-align: center;	
-     }
-   </style>
+<link rel="stylesheet" href="/css/style.css">
   </head>
 
  
@@ -60,7 +21,7 @@
           <!-- Conditionally render login or logout links -->
                 {{#if logged_in}}
                 <a href="/profile" class="pure-menu-link">Profile</a>
-                |
+                
                 <button class="no-button pure-button" id="logout">Logout</button>
                 {{else}}
                 <a href="/login" class="pure-menu-link">Login</a>
@@ -68,20 +29,15 @@
               <a href="/all">All Recipes</a>
         </nav>
         </header>
-        <div class="hero pure-g">
-            <p class="pure-u-1">Discover delicious recipes for every occasion</p>
-            <div class="search-container pure-u-1">
-                <input
-                    type="text"
-                    id="search-input"
-                    placeholder="What are you craving?"
-                    class="pure-input"
-                />
-                <button id="search-button" class="pure-button pure-button-primary">Start cooking!</button>
-                
-            </div>
-            <!-- Add an image here -->
-             <img src="/images/Chicken-Parm-IMAGE-1.jpg" alt="Image Description" class="pure-img">
+      <div class="hero pure-g center-content ">
+        <p class="pure-u-1">Discover delicious recipes for every occasion!!</p>
+        <input
+            type="text"
+            id="search-input"
+            placeholder="What are you craving?"
+            class="pure-input"/>
+        <button id="search-button" class="pure-button pure-button-primary">Start cooking!</button>
+</div>
         </div>
         <main class="container container-fluid mt-5">
             <!-- Render the layout -->

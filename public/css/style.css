@@ -1,2 +1,90 @@
 
+/* Default styles for header and navigation */
+header {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-image: url('/images/4.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2em;
+}
+
+nav {
+    background-color:cornsilk;
+    text-align: center;
+    border: 1px solid black; 
+}
+
+nav a {
+   direction: ltr;
+   display: inline; /* Display links in a line */
+    margin: 0 1em; /* Add spacing between links */
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.5em 1em; /* Add padding to links */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+   /* Style the section */
+
+.center-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+ #search-button {
+    background-color:goldenrod;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    background-color:cornsilk;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 2em;
+    border: 1px solid black;
+
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    nav a {
+        margin: 0.5em 0;
+    }
+}
+
+/* Media query for screens larger than 1200px */
+@media (min-width: 1200px) {
+    header {
+        padding: 4em;
+    }
+
+    nav {
+        padding: 2em;
+    }
+
+    nav a {
+        margin: 1em 0;
+        font-size: 1.2em;
+    }
+
+    .hero p {
+        padding: 4em;
+    }
+
+    .search-container {
+        padding: 4em;
+    }
+
+    .container {
+        padding: 4em;
+    }
+}
+
   
