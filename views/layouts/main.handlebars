@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restful Recipes</title>
+<<<<<<< HEAD
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/style.css">
+=======
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
@@ -11,6 +15,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/style.css" />
+>>>>>>> main
   </head>
 
   <body>
@@ -22,6 +27,27 @@
         <nav class="pure-u-1-2">
           <a href="/">Home</a>
           <!-- Conditionally render login or logout links -->
+<<<<<<< HEAD
+                {{#if logged_in}}
+                <a href="/profile" class="pure-menu-link">Profile</a>
+                
+                <button class="no-button pure-button" id="logout">Logout</button>
+                {{else}}
+                <a href="/login" class="pure-menu-link">Login</a>
+                {{/if}}
+              <a href="/all">All Recipes</a>
+        </nav>
+        </header>
+      <div class="hero pure-g center-content ">
+        <p class="pure-u-1">Discover delicious recipes for every occasion!!</p>
+        <input
+            type="text"
+            id="search-input"
+            placeholder="What are you craving?"
+            class="pure-input"/>
+        <button id="search-button" class="pure-button pure-button-primary">Start cooking!</button>
+</div>
+=======
           {{#if logged_in}}
             <a href="/profile" class="pure-menu-link">Profile</a>
             |
@@ -46,6 +72,7 @@
             class="pure-button pure-button-primary"
           >Start cooking!</button>
 
+>>>>>>> main
         </div>
         <!-- Add an image here -->
         <img
