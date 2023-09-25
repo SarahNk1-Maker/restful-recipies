@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/');
       } else {
         alert('Failed to delete recipe');
       }

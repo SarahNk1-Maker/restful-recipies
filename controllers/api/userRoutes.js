@@ -70,6 +70,12 @@ router.delete("/:id", async (req, res) => {
     const user = await User.findByPk(userID);
     console.log(user);
 
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    }
+
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
