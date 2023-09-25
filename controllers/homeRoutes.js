@@ -60,6 +60,34 @@ router.get("/all", async (req, res) => {
   }
 });
 
+//Route to find recipes by search input.
+router.get("/search", async, (req, res)) => {
+
+  //Get all recipes but exclude data unrelated to search.
+  try {
+    const recipeData = await Recipe.findAll({
+      attributes: { exclude: ["description", "ingredients", "instructions", "user_id"]}
+    })
+
+      // Serialize data so the template can read it
+      const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+
+      res.render("search", {
+        recipes: recipes, // Pass the recipes data as an object property
+        logged_in: req.session.logged_in,
+      });
+
+  }  catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+}
+
+const userData = await User.findByPk(req.session.user_id, {
+  attributes: { exclude: ["password"] },
+  include: [{ model: Recipe }],
+});
+
 // Route to render the recipe page based on ID
 router.get("/recipe/:id", async (req, res) => {
   try {
