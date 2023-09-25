@@ -1,7 +1,7 @@
 <!-- Define the template in a script tag with an id -->
 <section id="recipe-template" type="text/x-handlebars-template">
   <h1>{{title}}</h1>
-  <h2>Chef: {{user_id}} </h2>
+  <h2>Chef: {{user.username}} </h2>
   <h2>Description: {{description}}</h2>
   <p>Prep Time: {{prep_time}}</p>
   <p>Cook Time: {{cook_time}}</p>
@@ -11,6 +11,29 @@
 
 <!-- Create a container where the recipe will be rendered -->
 <div id="recipe-container"></div>
+
+
+  <h3>Comments: </h3>
+  <div id="FB-root"></div>
+  <script
+    async
+    defer
+    crossorigin="anonymous"
+    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=${`facebookAppId`}&autoLogAppEvents=1"
+    nonce="YOUR_NONCE">
+    </script>
+
+<div class="fb-comments" data-href="http://localhost:3001" data-numposts="5" data-width=""></div>
+
+
+  <script>
+  FB.init({
+    appId: 'facebookAppId',
+    autoLogAppEvents: true,
+    xfbml: true,
+    version: 'v10.0'
+  });
+</script>
 
 <!-- Include the external JavaScript file  <script src="recipe.js"></script>-->
  
