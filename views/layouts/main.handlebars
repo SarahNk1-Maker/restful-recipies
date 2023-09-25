@@ -56,7 +56,8 @@
                 <a href="/" class="pure-menu-heading">Restful Recipes</a>
             </h1>
             <nav class="pure-u-1-2">
-                <!-- Conditionally render login or logout links -->
+                <a href="/">Home</a>
+          <!-- Conditionally render login or logout links -->
                 {{#if logged_in}}
                 <a href="/profile" class="pure-menu-link">Profile</a>
                 |
@@ -64,7 +65,8 @@
                 {{else}}
                 <a href="/login" class="pure-menu-link">Login</a>
                 {{/if}}
-            </nav>
+              <a href="/all">All Recipes</a>
+        </nav>
         </header>
         <div class="hero pure-g">
             <p class="pure-u-1">Discover delicious recipes for every occasion</p>
