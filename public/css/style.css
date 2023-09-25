@@ -1,2 +1,170 @@
 
-  
+/* Default styles for header and navigation */
+header {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-image: url('/images/4.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2em;
+}
+
+nav {
+    background-color:cornsilk;
+    text-align: center;
+    border: 1px solid black; 
+}
+
+nav a {
+   direction: ltr;
+   display: inline; /* Display links in a line */
+    margin: 0 1em; /* Add spacing between links */
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.5em 1em; /* Add padding to links */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+   /* Style the section */
+
+.center-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+ #search-button {
+    background-color:goldenrod;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    background-color:cornsilk;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 2em;
+    border: 1px solid black;
+
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    nav a {
+        margin: 0.5em 0;
+    }
+}
+
+/* Media query for screens larger than 1200px */
+@media (min-width: 1200px) {
+    header {
+        padding: 4em;
+    }
+
+    nav {
+        padding: 2em;
+    }
+
+    nav a {
+        margin: 1em 0;
+        font-size: 1.2em;
+    }
+
+    .hero p {
+        padding: 4em;
+    }
+
+    .search-container {
+        padding: 4em;
+    }
+
+    .container {
+        padding: 4em;
+    }
+}
+header {
+  background-color: burlywood;
+  margin: 2em auto;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  text-align: center;
+}
+header a {
+  color: #fff;
+}
+nav {
+  background-color: chocolate;
+}
+.hero p {
+  color: #333;
+  margin: 2em auto;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  text-align: center;
+}
+
+/* Search input background color */
+.search-container {
+  background-color: #fff;
+  margin: 2em auto;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  text-align: center;
+}
+
+/* Search button background color */
+#search-button {
+  background-color: chocolate;
+}
+.container {
+  background-color: antiquewhite;
+  margin: 2em auto;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  text-align: center;
+}
+
+/* Frooter styles */
+
+footer {
+  border-top: 1px solid #eee;
+  font-size: 87.5%;
+  padding: 1.1429em;
+}
+
+ul.legal-links {
+  list-style: none;
+}
+
+li {
+  display: list-item;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.legal {
+    line-height: 1;
+
+}
+
+.pure-g {
+    align-content: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.legal-links {
+    text-align: right;
+}
+
+li {
+  color: #333;
+}
