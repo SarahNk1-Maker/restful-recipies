@@ -12,28 +12,24 @@
 <!-- Create a container where the recipe will be rendered -->
 <div id="recipe-container"></div>
 
-
-  <h3>Comments: </h3>
-  <div id="FB-root"></div>
-  <script
-    async
-    defer
-    crossorigin="anonymous"
-    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=${`facebookAppId`}&autoLogAppEvents=1"
-    nonce="YOUR_NONCE">
-    </script>
-
-<div class="fb-comments" data-href="http://localhost:3001" data-numposts="5" data-width=""></div>
-
-
-  <script>
-  FB.init({
-    appId: 'facebookAppId',
-    autoLogAppEvents: true,
-    xfbml: true,
-    version: 'v10.0'
-  });
+<h3>Comments: </h3>
+<div id="FB-root"></div>
+<script
+  async
+  defer
+  crossorigin="anonymous"
+  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=${`facebookAppId`}&autoLogAppEvents=1"
+  nonce="YOUR_NONCE"
+>
 </script>
 
-<!-- Include the external JavaScript file  <script src="recipe.js"></script>-->
- 
+<div
+  class="fb-comments"
+  data-href="http://localhost:3001"
+  data-numposts="5"
+  data-width=""
+>
+</div>
+
+<!-- Include the external JavaScript file -->
+<script src="./js/recipe.js"></script>
