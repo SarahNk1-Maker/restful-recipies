@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   // Event listener to delete a recipe.
-  const delButtonHandler = async (event) => {
+  const recipeDelButtonHandler = async (event) => {
     if (event.target.hasAttribute('recipeData-id')) {
       const id = event.target.getAttribute('recipeData-id');
 
@@ -54,12 +54,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (chefRecipeList) {
-    chefRecipeList.addEventListener('click', delButtonHandler);
+    chefRecipeList.addEventListener('click', recipeDelButtonHandler);
   }
 });
 
   // Event listener to delete a user.
-  const delButtonHandler = async (event) => {
+  const userDelButtonHandler = async (event) => {
     if (event.target.hasAttribute('userData-id')) {
       const id = event.target.getAttribute('userData-id');
 
@@ -74,3 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   };
+
+  const userDeleteBtn = document.querySelector('userDeleteBtn');
+  userDeleteBtn.addEventListener('click', userDelButtonHandler);
