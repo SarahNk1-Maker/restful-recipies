@@ -7,14 +7,14 @@
     },
     {
       "id": 2,
-      "username": "Ben",
-      "email": "ben@gmail.com",
+      "username": "Sarah",
+      "email": "sarah@gmail.com",
       "password": "123456"
     },
     {
       "id": 3,
-      "username": "Sarah",
-      "email": "sarah@gmail.com",
+      "username": "Ben",
+      "email": "ben@gmail.com",
       "password": "123456"
-    }
+    } 
 ]
