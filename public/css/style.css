@@ -1,2 +1,37 @@
+header {
+  background-color: burlywood;
+  margin: 2em auto;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  text-align: center;
+}
+header a {
+  color: #fff;
+}
+nav {
+  background-color: chocolate;
+}
+.hero p {
+  color: #333;
+  margin: 2em auto;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  text-align: center;
+}
 
-  
+/* Search input background color */
+.search-container {
+  background-color: #fff;
+  margin: 2em auto;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  text-align: center;
+}
+
+/* Search button background color */
+#search-button {
+  background-color: chocolate;
+}
+.container {
+  background-color: antiquewhite;
+  margin: 2em auto;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  text-align: center;
+}
