@@ -75,5 +75,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  const userDeleteBtn = document.querySelector('userDeleteBtn');
+  const userDeleteBtn = document.querySelector('#userDeleteBtn');
   userDeleteBtn.addEventListener('click', userDelButtonHandler);
