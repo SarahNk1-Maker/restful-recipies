@@ -70,18 +70,17 @@ router.delete("/:id", async (req, res) => {
     const user = await User.findByPk(userID);
     console.log(user);
 
-    if (req.session.logged_in) {
-      req.session.destroy(() => {
-        res.status(204).end();
-      });
-    }
-
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
 
     // Delete the user from the database
     await user.destroy();
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    }
 
     // Send a success response or a message indicating successful deletion
     res.status(204).send(); // 204 No Content status for successful deletion
