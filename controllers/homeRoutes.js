@@ -94,7 +94,7 @@ router.get("/search", async (req, res) => {
     // Serialize data so the template can read it
     const searchData = recipeData.map((recipe) => recipe.get({ plain: true }));
 
-    res.render("search", {
+    res.render("searchResult", {
       recipes: searchData, // Pass the search data as an object property
       logged_in: req.session.logged_in,
     });
