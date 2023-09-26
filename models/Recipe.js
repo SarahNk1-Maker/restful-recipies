@@ -15,6 +15,10 @@ Recipe.init(
       type: DataTypes.STRING(50),
       allowNull: false,
     },
+    tag: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+    },
     description: {
       type: DataTypes.STRING(2000),
       allowNull: false,

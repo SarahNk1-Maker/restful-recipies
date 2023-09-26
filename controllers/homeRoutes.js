@@ -1,7 +1,10 @@
 const router = require("express").Router();
 const { Recipe, User } = require("../models");
 const withAuth = require("../utils/auth");
+const Sequelize = require("sequelize");
+const { Op } = require("sequelize"); // Import Sequelize's Op for complex queries (search handler)
 
+// Route handler to render random recipe on home view.
 router.get("/", async (req, res) => {
   try {
     // Get all recipes and JOIN with user data
@@ -16,7 +19,7 @@ router.get("/", async (req, res) => {
 
     // Serialize data so the template can read it
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-    console.log(recipes);
+    // console.log(recipes);
 
     // Choose one of the recipes at random.
     const recipe_id = recipes[Math.floor(Math.random() * recipes.length)].id;
@@ -33,7 +36,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Route to render all recipes to body.
+// Route to render all recipes for the all recipes view.
 router.get("/all", async (req, res) => {
   try {
     // Get all recipes and JOIN with user data
@@ -48,13 +51,60 @@ router.get("/all", async (req, res) => {
 
     // Serialize data so the template can read it
     const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-    console.log(recipes);
+    // console.log(recipes);
     // Pass serialized data to template as a propery of the object literal.
     res.render("allRecipes", {
       recipes: recipes, // Pass the recipes data as an object property
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+//Route to find recipes by search input.
+
+
+router.get("/search", async (req, res) => {
+  try {
+    // Get the search term from the query parameters
+    const searchTerm = req.query.term;
+    // Split the searchTerm into individual words
+    const searchWords = searchTerm.split(" ").map((word) => word.toLowerCase());
+
+    // Find recipes where the tag contains any of the searchWords
+    const recipeData = await Recipe.findAll({
+      attributes: { exclude: ["ingredients", "instructions"] },
+      where: {
+        [Op.and]: searchWords.map((word) => ({
+          [Op.or]: [
+            Sequelize.where(
+              Sequelize.fn("LOWER", Sequelize.col("tag")),
+              "LIKE",
+              `%${word}%`
+            ),
+          ],
+        })),
+      },
+      include: [
+        {
+          model: User, // Assuming User is the model for user-related data
+          attributes: ["username"],
+        },
+      ],
+    });
+    
+    // Serialize data so the template can read it
+    const searchData = recipeData.map((recipe) => recipe.get({ plain: true }));
+    console.log(searchData) // Works
+    
+    res.render("searchResult", {
+      recipes: searchData, // Pass the search data as an object property
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.setHeader('Content-Type', 'application/json');
     console.log(err);
     res.status(500).json(err);
   }

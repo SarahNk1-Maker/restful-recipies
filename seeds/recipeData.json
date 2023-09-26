@@ -1,6 +1,7 @@
 [
   {
     "title": "Peanut Butter Cookies",
+    "tag": "dessert",
     "description": "Your next go-to quick n easy dessert",
     "ingredients": "1 egg, 1 cup peanut butter, 1 cup sugar",
     "instructions": "Mix all ingredients and bake for 12 min",
@@ -10,6 +11,7 @@
   },
   {
     "title": "Limeade",
+    "tag": "beverage, breastfast, dessert",
     "description": "It's citrus fresh!",
     "ingredients": "4 juicy limes, 6 cups water, 1 cup granulated sugar, 6 tbsp sweetened condensed milk",
     "instructions": "Wash limes thoroughly to remove any pesticides or wax. Slive the ends of each lime, then slice into 1/8ths. In a blender combined half the water, sugar and limes, then pulse 5-7 times. Pour through a fine-mesh strainer into a pitcher, pressing the lime pulp to help release juices, then discard the remaining skins/pulp. Repeat with the second half of ingredients. Stir the sweetened condense milk into the limeade and serve with lots of ice and thin slices of lime for garnish. If the drink is too bitter or sour you can add a litle exrta sweetened condnse milk, or sugar, as needed.",
@@ -19,6 +21,7 @@
   },
   {
     "title": "Chicken Parmesan",
+    "tag": "dinner, lunch",
     "description": "The best one EVER. Oven baked with simple tomato sauce and crispy cheesy coating",
     "ingredients": "4 boneless chicken breast halves, 2 eggs, 2/4 cup grated parmesan cheese, 2 tablespoons all-purpose flour, 1/2 cup tomato suace, 1/4 cup fresh mozzarella, 1/4 cop chopped fresh basil, 1 cup panko bread crumbs, salt and fresh black pepper.",
     "instructions": "Preheat oven to 450 degrees F (230 degrees C). Place chicken breasts between two sheets of plasic and pound until 1/2-inch thick. Season both sides with slat and pepper, and sprinkle flour coating both sides. Beat eggs in a bowl. Mix panko and 1/2cap parmesan cheese in a bowl. Dip the coated chicken breasts in the eggs, then dip into the bread crumbs. Let rest for 10 minutes. Heat 1/2 inch olive oil in a large skillet on medium-high heat. Wait until oil begins to shimmer then cook each breast for two minutes per side. Transfer chicken to baking dish. Top each with 2 tomato suace, mozeralla cheese, and fresh basil, remaining parmesan and drizze 1/2 teaspoon olive oil Bake for 15-20 minutes, until internal temperature 165 degrees F (74 C).",
@@ -28,6 +31,7 @@
   },
   {
     "title": "Banana Nutella Milkshake",
+    "tag": "beverage, breastfast, dessert",
     "description": "Sweet, nutty and incredibly refreshing. This milkshake is a creamy swirl of fresh bananas and velvety nutella! This recipe calls for a few more ingredinets but you want to make it a bit healthier you can skip the extra cream and vanille ice cream.",
     "ingredients": "2 bananas, 4 tbsp nutella, 1/2 cup milk, ice(or vanilla ice cream!), 1/2 cup cream, whipped cream to top it off!",
     "instructions": "Put everything in a blender and blend. Pour into large cops and decorate with whipped cream!",
@@ -37,7 +41,8 @@
   },
   {
     "title": "'Miyeokguk' Korean Seaweed Soup",
-    "description": "Try this light, healthy, and nutritious Korean seaweed soup. Easy to make and is rich in iodine, iron, and calcium while helping lower cholseterol. This recipe suggests beef but there are many alternatives. Oxtail is also popular, or even vegetarian!",
+    "tag": "dinner, lunch, soup",
+    "description": "Try this light, healthy, and nutritious Korean seaweed soup. Easy to make and is rich in iodine, iron, and calcium while helping lower cholseterol. This recipe suggests beef but there are many alternatives. Oxtail or seafood is also popular, or even skip the meat and go vegetarian!",
     "ingredients": "1/2 ounce dried miyeok(seaweed), 8 cups water, 4 garlic cloves (minced), 1 tablespoon fish sauce(or salt and soy sauce), 2 teaspoon toasted sesame oil, 1 pound beef.",
     "instructions": "Soak miyeok in cold water for 30 mins. Rinse and drain, squeeze excess water and cut into bite-size pieces. Begin cooking rice. Transfer miyeok to boiling water. Let it boil for 10 minutes then reduce to medium heat. Add sesame oil and meat. Gently stir for 2 minutes then add the garlic, fish sauce and soy sauce. Cover the pot and boil over medium heat until the meat is fully cooked (10 to 15 mins). Adjust salt to taste.",
     "prep_time": 30,
@@ -46,7 +51,8 @@
   },
   {
       "title": "Homemade Kimchi",
-      "description": "Kimchi is a great spicy fermented side dish! It is fermented in a similar manner to sauerkraut or dill pickles, in a salty brine that can be salt water or some kind of seafood stock. While the recipe calls for any cabbage or red pepper flakes, specifically nappa cabbage and gochugaru red pepper flakes work best!",
+      "tag": "fermented, spicy, side",
+      "description": "Kimchi is a great spicy fermented side dish! It is fermented in a similar manner to sauerkraut or dill pickles, in a salty brine that can be salt water or some kind of seafood stock. While the recipe calls for any cabbage, radish or ed pepper flakes, specifically nappa cabbage and korean raddish and red pepper flakes work best!",
       "ingredients": "1 medium head cabbage, 1/4 cup salt (iodine free), water, 1 tbsp grated garlic (about 5 clove), 1 tsp grated ginger, 1 tsp sugar, 2 tbsp fish sauce or water, 1 to 4 tbsp red pepper flakes, 8 ounces radish cut into matchsticks, 4 medium scallions diced",
       "instructions": "Cut the cabbage into 1 to 2 inch length pieces. Remove the core. Place the sliced cabbage in a large bowl and sprinkle with salt. Massage the salt into the cabbage. Add enough water to cover the cabbage and let stand for two hours. Rinse and drain the cabbage in a colander for 20 minutes. While cabbage drains take a bowl and add garlic, gigner, sugar, and fish sauce/shrimp paste/water and stir until paste. Stor in the red pepper flakes (1tbsp for mild up to 5tbsp for SPICY!). Next add the cabbage to the bowl and mix with the past thoroughly. Then pack it tightly into a jar and let sit for 5 days.",
       "prep_time": 40,
