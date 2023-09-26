@@ -13,8 +13,6 @@ const searchButtonHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace(`/search?term=${searchTerm}`);
-    } else {
-      window.alert("No recipes with this tag.");
     }
   }
 };
