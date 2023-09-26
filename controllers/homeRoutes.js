@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Recipe, User } = require("../models");
 const withAuth = require("../utils/auth");
 
+// Route handler to render random recipe on home view.
 router.get("/", async (req, res) => {
   try {
     // Get all recipes and JOIN with user data
@@ -33,7 +34,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Route to render all recipes to body.
+// Route to render all recipes for the all recipes view.
 router.get("/all", async (req, res) => {
   try {
     // Get all recipes and JOIN with user data
@@ -91,6 +92,7 @@ router.get("/search", async (req, res) => {
         },
       ],
     });
+    console.log(recipeData);
 
     // Serialize data so the template can read it
     const searchData = recipeData.map((recipe) => recipe.get({ plain: true }));

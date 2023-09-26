@@ -4,21 +4,26 @@ const searchBtn = document.querySelector("#search-button");
 searchBtn.addEventListener("click", searchButtonHandler);
 
 async function searchButtonHandler() {
-    const searchTerm = searchInput.value.trim().toLowerCase();
-  
-    if (searchTerm) {
-      // Send a request to your server with the search term
+  console.log("Button clicked"); 
+  const searchTerm = searchInput.value.trim().toLowerCase();
+
+  if (!searchTerm) {
+    docu
+    try {
       const response = await fetch(`/search?term=${searchTerm}`, {
         method: "GET",
       });
-  
+
       if (response.ok) {
-        // Handle the response and display search results
         const recipes = await response.json();
-        // You can render the recipes here in your search.handlebars
         console.log(recipes);
+        // Render recipes on the page
       } else {
+        alert(response.statusText);
         console.error("Search request failed.");
       }
+    } catch (error) {
+      console.error("An error occurred:", error);
     }
   }
+}
