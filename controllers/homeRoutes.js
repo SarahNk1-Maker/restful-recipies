@@ -75,7 +75,7 @@ router.get("/search", async (req, res) => {
 
     // Find recipes where the tag contains any of the searchWords
     const recipeData = await Recipe.findAll({
-      attributes: { exclude: ["ingredients", "instructions"] }, // Remove the extra comma here
+      attributes: { exclude: ["ingredients", "instructions"] },
       where: {
         [Op.or]: searchWords.map((word) => ({
           [Op.or]: [
