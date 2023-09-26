@@ -1,6 +1,7 @@
 const router = require("express").Router();
-const { Recipe, User, Sequelize } = require("../models");
+const { Recipe, User } = require("../models");
 const withAuth = require("../utils/auth");
+const Sequelize = require("sequelize");
 const { Op } = require("sequelize"); // Import Sequelize's Op for complex queries (search handler)
 
 // Route handler to render random recipe on home view.
@@ -93,11 +94,11 @@ router.get("/search", async (req, res) => {
         },
       ],
     });
-    console.log(recipeData);
-
+    
     // Serialize data so the template can read it
     const searchData = recipeData.map((recipe) => recipe.get({ plain: true }));
-
+    console.log(searchData)
+    
     res.render("searchResult", {
       recipes: searchData, // Pass the search data as an object property
       logged_in: req.session.logged_in,
