@@ -6,8 +6,10 @@ const withAuth = require('../../utils/auth'); //Import our utility function, why
 router.post('/', withAuth, async (req, res) => {
   try {
     // Extract recipe data from the request body
-    const { title, tag, description, ingredients, instructions, prep_time, cook_time, user_id } = req.body;
 
+    const { title, tag, description, ingredients, instructions, prep_time, cook_time, user_id } = req.body;
+    console.log("tag", tag)
+console.log(req.body)
     // Create a new recipe in the database
     const newRecipe = await Recipe.create({
       title,
