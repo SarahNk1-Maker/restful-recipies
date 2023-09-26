@@ -19,3 +19,4 @@ const searchButtonHandler = async (event) => {
 
 const searchBtn = document.querySelector("#search-button");
 searchBtn.addEventListener("click", searchButtonHandler);
+f
