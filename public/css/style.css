@@ -42,6 +42,10 @@ nav a {
   align-items: center;
 }
 
+.form-group {
+  margin: 6px;
+}
+
 .container {
   background-color: cornsilk;
   font-family: Arial, Helvetica, sans-serif;
@@ -76,6 +80,12 @@ nav a {
 
 #userDeleteBtn {
   background-color: rgb(129, 23, 23);
+  color: white;
+}
+
+button {
+  background-color: chocolate;
+  border: none;
   color: white;
 }
 
@@ -143,6 +153,7 @@ nav {
 /* Search button background color */
 #search-button {
   background-color: chocolate;
+  margin-left: 10px;
 }
 .container {
   background-color: antiquewhite;
@@ -194,3 +205,13 @@ ul {
 li {
   color: #333;
 }
+
+a {
+  text-decoration: none;
+  color: rgb(120, 10, 10);
+}
+
+h2 {
+  color:rgb(120, 10, 10);
+}
+
