@@ -20,7 +20,6 @@
           <!-- Conditionally render login or logout links -->
                 {{#if logged_in}}
                 <a href="/profile" class="pure-menu-link">Profile</a>
-                
                 <button class="no-button pure-button" id="logout">Logout</button>
                 {{else}}
                 <a href="/login" class="pure-menu-link">Login</a>
@@ -28,6 +27,7 @@
               <a href="/all">All Recipes</a>
         </nav>
         </header>
+      
       <div class="hero pure-g center-content ">
         <p class="pure-u-1">Discover delicious recipes for every occasion!!</p>
         <input
@@ -37,31 +37,6 @@
             class="pure-input"/>
         <button id="search-button" class="pure-button pure-button-primary">Start cooking!</button>
       </div>
-          {{#if logged_in}}
-            <a href="/profile" class="pure-menu-link">Profile</a>
-            |
-            <button class="no-button pure-button" id="logout">Logout</button>
-          {{else}}
-            <a href="/login" class="pure-menu-link">Login</a>
-          {{/if}}
-          <a href="/all">All Recipes</a>
-        </nav>
-      </header>
-      <div class="hero pure-g">
-        <p class="pure-u-1">Discover delicious recipes for every occasion</p>
-        <div class="search-container pure-u-1">
-          <input
-            type="text"
-            id="search-input"
-            placeholder="What are you craving?"
-            class="pure-input"
-          />
-          <button
-            id="search-button"
-            class="pure-button pure-button-primary"
-          >Start cooking!</button>
-
-        </div>
         <!-- Add an image here 
         <img
           src="/images/Chicken-Parm-IMAGE-1.jpg"
