@@ -25,6 +25,11 @@ nav a {
   padding: 0.5em 1em; /* Add padding to links */
   transition: background-color 0.3s; /* Smooth background color transition */
 }
+
+h1.pure-u-1-2 {
+  text-shadow: -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, 1px 1px 1px #000;
+}
+
 /* Style the section */
 
 .center-content {
