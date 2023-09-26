@@ -47,11 +47,11 @@ console.log(tag)
   };
 
   // Ensure that the elements with the specified IDs exist before adding event listeners
-  const newRecipeForm = document.querySelector('#newRecipeForm');
+  const newRecipeBtnEl = document.querySelector('#newRecipeBtn');
   const chefRecipeList = document.querySelector('#chefRecipeList');
 
-  if (newRecipeForm) {
-    newRecipeForm.addEventListener('submit', newFormHandler);
+  if (newRecipeBtnEl) {
+    newRecipeBtnEl.addEventListener('click', newFormHandler);
   }
 
   if (chefRecipeList) {
