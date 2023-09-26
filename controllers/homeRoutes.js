@@ -77,7 +77,7 @@ router.get("/search", async (req, res) => {
     const recipeData = await Recipe.findAll({
       attributes: { exclude: ["ingredients", "instructions"] },
       where: {
-        [Op.or]: searchWords.map((word) => ({
+        [Op.and]: searchWords.map((word) => ({
           [Op.or]: [
             Sequelize.where(
               Sequelize.fn("LOWER", Sequelize.col("tag")),
@@ -97,13 +97,14 @@ router.get("/search", async (req, res) => {
     
     // Serialize data so the template can read it
     const searchData = recipeData.map((recipe) => recipe.get({ plain: true }));
-    console.log(searchData)
+    console.log(searchData) // Works
     
     res.render("searchResult", {
       recipes: searchData, // Pass the search data as an object property
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    res.setHeader('Content-Type', 'application/json');
     console.log(err);
     res.status(500).json(err);
   }

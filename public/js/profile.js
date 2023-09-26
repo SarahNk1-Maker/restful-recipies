@@ -5,17 +5,16 @@ document.addEventListener('DOMContentLoaded', function () {
     event.preventDefault();
 
     const title = document.querySelector('#recipe-title').value.trim();
-    const tag = document.querySelector('#recipe-tag').value.trim();
     const description = document.querySelector('#recipe-desc').value.trim();
     const ingredients = document.querySelector('#recipe-ingredients').value.trim();
     const instructions = document.querySelector('#recipe-instructions').value.trim();
     const prep_time = document.querySelector('#recipe-prepTime').value.trim();
     const cook_time = document.querySelector('#recipe-cookTime').value.trim();
 
-    if (title && tag && description && ingredients && instructions && prep_time && cook_time) {
+    if (title && description && ingredients && instructions && prep_time && cook_time) {
       const response = await fetch(`/api/recipes`, {
         method: 'POST',
-        body: JSON.stringify({ title, tag, description, ingredients, instructions, prep_time, cook_time }),
+        body: JSON.stringify({ title, description, ingredients, instructions, prep_time, cook_time }),
         headers: {
           'Content-Type': 'application/json',
         },

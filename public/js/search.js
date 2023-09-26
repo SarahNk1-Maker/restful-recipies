@@ -1,26 +1,23 @@
-const searchInput = document.querySelector("#search-input");
-const searchBtn = document.querySelector("#search-button");
+const searchButtonHandler = async (event) => {
+  event.preventDefault();
+  console.log("button clicked");
 
-searchBtn.addEventListener("click", searchButtonHandler);
-
-async function searchButtonHandler() {
-  console.log("Button clicked");
+  const searchInput = document.querySelector("#search-input");
   const searchTerm = searchInput.value.trim().toLowerCase();
+  console.log(searchTerm);
 
-  try {
+  if (searchTerm) {
     const response = await fetch(`/search?term=${searchTerm}`, {
       method: "GET",
     });
 
     if (response.ok) {
-      const recipes = await response.json();
-      console.log(recipes);
-      // Render recipes on the page
+      document.location.replace(`/search?term=${searchTerm}`);
     } else {
-      alert(response.statusText);
-      console.error("Search request failed.");
+      window.alert("No recipes with this tag.");
     }
-  } catch (error) {
-    console.error("An error occurred:", error);
   }
-}
+};
+
+const searchBtn = document.querySelector("#search-button");
+searchBtn.addEventListener("click", searchButtonHandler);
