@@ -1,90 +1,117 @@
-
 /* Default styles for header and navigation */
 header {
-    background-color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    background-image: url('/images/4.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 2em;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-image: url("/images/4.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2em;
 }
 
 nav {
-    background-color:cornsilk;
-    text-align: center;
-    border: 1px solid black; 
+  background-color: cornsilk;
+  text-align: center;
+  border: 1px solid black;
 }
 
 nav a {
-   direction: ltr;
-   display: inline; /* Display links in a line */
-    margin: 0 1em; /* Add spacing between links */
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    text-decoration: none;
-    padding: 0.5em 1em; /* Add padding to links */
-    transition: background-color 0.3s; /* Smooth background color transition */
+  direction: ltr;
+  display: inline; /* Display links in a line */
+  margin: 0 1em; /* Add spacing between links */
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5em 1em; /* Add padding to links */
+  transition: background-color 0.3s; /* Smooth background color transition */
 }
-   /* Style the section */
+/* Style the section */
 
 .center-content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
- #search-button {
-    background-color:goldenrod;
-    display: flex;
-    align-items: center;
+#search-button {
+  background-color: goldenrod;
+  display: flex;
+  align-items: center;
 }
 
 .container {
-    background-color:cornsilk;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    padding: 2em;
-    border: 1px solid black;
+  background-color: cornsilk;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 2em;
+  border: 1px solid black;
+}
 
+#upload_widget {
+  background-color: #f4d2ab;
+  color: black;
+  font-size: 16px;
+  margin: 6px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s ease;
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  width: auto;
+}
+
+
+#upload_widget:hover {
+  background-color: chocolate;
+}
+
+#uploadedimage {
+  max-width: 100%;
+  height: auto;
+}
+
+#userDeleteBtn {
+  background-color: rgb(129, 23, 23);
+  color: white;
 }
 
 /* Media query for screens smaller than 768px */
 @media (max-width: 768px) {
-    nav a {
-        margin: 0.5em 0;
-    }
+  nav a {
+    margin: 0.5em 0;
+  }
 }
 
 /* Media query for screens larger than 1200px */
 @media (min-width: 1200px) {
-    header {
-        padding: 4em;
-    }
+  header {
+    padding: 4em;
+  }
 
-    nav {
-        padding: 2em;
-    }
+  nav {
+    padding: 2em;
+  }
 
-    nav a {
-        margin: 1em 0;
-        font-size: 1.2em;
-    }
+  nav a {
+    margin: 1em 0;
+    font-size: 1.2em;
+  }
 
-    .hero p {
-        padding: 4em;
-    }
+  .hero p {
+    padding: 4em;
+  }
 
-    .search-container {
-        padding: 4em;
-    }
+  .search-container {
+    padding: 4em;
+  }
 
-    .container {
-        padding: 4em;
-    }
+  .container {
+    padding: 4em;
+  }
 }
 header {
   background-color: burlywood;
@@ -151,18 +178,17 @@ ul {
 }
 
 .legal {
-    line-height: 1;
-
+  line-height: 1;
 }
 
 .pure-g {
-    align-content: flex-start;
-    display: flex;
-    flex-flow: row wrap;
+  align-content: flex-start;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .legal-links {
-    text-align: right;
+  text-align: right;
 }
 
 li {
