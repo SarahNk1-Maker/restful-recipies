@@ -1,6 +1,7 @@
 const router = require("express").Router();
-const { Recipe, User } = require("../models");
+const { Recipe, User, Sequelize } = require("../models");
 const withAuth = require("../utils/auth");
+const { Op } = require("sequelize"); // Import Sequelize's Op for complex queries (search handler)
 
 // Route handler to render random recipe on home view.
 router.get("/", async (req, res) => {
@@ -62,7 +63,7 @@ router.get("/all", async (req, res) => {
 });
 
 //Route to find recipes by search input.
-const { Op } = require("sequelize"); // Import Sequelize's Op for complex queries
+
 
 router.get("/search", async (req, res) => {
   try {
