@@ -22,6 +22,10 @@
   
   [Video Demo](https://drive.google.com/file/d/1DkhnDlt3WpXi3Tx-Wx1fk-NN7v6Mei8z/view)
 
+  ## Screenshots
+  ![screenshot1](public/images/restfull-recipes-img.png)
+   ![screenshot2](public/images/restfull-recipes-scrshoot.png)
+
   ## License
   This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
     
