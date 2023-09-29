@@ -24,6 +24,11 @@
 
   ## License
   This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
+
+  ## Screenshots
+![restfull-recipes-scrshoot](https://github.com/SarahNk1-Maker/restful-recipies/assets/140107498/e03e1952-92ca-4834-bbc8-719d5a0bd9c5)
+![restfull-recipes-scrshoot](https://github.com/SarahNk1-Maker/restful-recipies/assets/140107498/c4b248a4-33e6-41aa-80f9-c5655af39072)
+
     
   ## Contributing
   We welcome contributions to RESTful Recipes! To get started:
